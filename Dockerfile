@@ -21,9 +21,11 @@ ENV AUTHENTICATION_API_KEY=${AUTHENTICATION_API_KEY} \
     REDIS_HOST=${REDIS_HOST} \
     REDIS_PORT=${REDIS_PORT} \
     REDIS_PASSWORD=${REDIS_PASSWORD}
+    SERVER_URL=https://evolution-apiw-production.up.railway.app
 
 # Expondo a porta da aplicação
 EXPOSE 8080
 
 # Comando para diagnóstico e execução
 CMD ["sh", "-c", "redis-cli -u $CACHE_REDIS_URI ping && npm run start:prod"]
+
